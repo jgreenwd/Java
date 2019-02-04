@@ -46,6 +46,40 @@ public class Exercises {
         System.out.println(num);
     }
     
+    // #6. Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,...,n.
+    public static void ex6() {
+        System.out.println("Enter a positive integer: ");
+        int limit = input.nextInt();
+        System.out.println("Calculate (P)roduct or (S)um: ");
+        String calc = input.next();
+        
+        int num = 1;
+        if (calc.equals("P")) {
+            for(int i = 1; i <= limit; i++) {
+                num *= i;
+            }
+        } else if (calc.equals("S")) {
+            for(int i = 2; i <= limit; i++) {
+                num += i;
+            }
+        }
+        System.out.println(num);
+    }
+    
+    // #7. Write a program that prints a multiplication table for numbers up to 12.
+    public static void ex7() {
+        System.out.println("Enter an integer between 1 & 12: ");
+        int limit = input.nextInt();
+        if (limit > 12 || limit < 1) return;
+        
+        for(int i = 1; i <= limit; i++) {
+            for(int j = 1; j <= limit; j++) {
+                System.out.print(i*j + "\t");
+            }
+            System.out.println();
+        }
+    }
+    
     public static void main(String[] args) {
     // ... insert call to exercise here ...
     }
