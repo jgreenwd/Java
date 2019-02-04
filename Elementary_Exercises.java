@@ -26,9 +26,22 @@ public class Exercises {
     public static void ex4() {
         System.out.println("Enter a positive integer: ");
         int limit = input.nextInt();
-        int num = 1;
+        int num = 0;
         for(int i = 1; i <= limit; i++) {
             num += i;
+        }
+        System.out.println(num);
+    }
+    
+    // #5. Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
+    public static void ex5() {
+        System.out.println("Enter a positive integer: ");
+        int limit = input.nextInt();
+        int num = 0;
+        for(int i = 1; i <= limit; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                num += i;
+            }
         }
         System.out.println(num);
     }
