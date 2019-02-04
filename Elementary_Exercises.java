@@ -28,10 +28,11 @@ public class Exercises {
         int limit = input.nextInt();
         int num = 1;
         for(int i = 1; i <= limit; i++) {
-            num *= i;
+            num += i;
         }
         System.out.println(num);
     }
+    
     public static void main(String[] args) {
     // ... insert call to exercise here ...
     }
