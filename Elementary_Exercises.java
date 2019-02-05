@@ -38,7 +38,8 @@ public class Exercises {
     }
     
     
-    // #5. Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
+    // #5. Modify the previous program such that only multiples of three or five are considered in the sum, 
+    //     e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
     public static void ex5() {
         System.out.println("Enter a positive integer: ");
         int limit = input.nextInt();
@@ -52,7 +53,8 @@ public class Exercises {
     }
     
     
-    // #6. Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,...,n.
+    // #6. Write a program that asks the user for a number n and gives them the possibility to choose between 
+    //     computing the sum and computing the product of 1,...,n.
     public static void ex6() {
         System.out.println("Enter a positive integer: ");
         int limit = input.nextInt();
@@ -88,8 +90,9 @@ public class Exercises {
     }
     
     
-   // #8. Write a program that prints all prime numbers. (Note: if your programming language does not support arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)
-    public static void exer(int max_) {
+   // #8. Write a program that prints all prime numbers. (Note: if your programming language does not support 
+   //     arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)
+    public static void ex8(int max_) {
         ArrayList<Integer> primes = new ArrayList<Integer>();
         primes.add(2);
         primes.add(3);
@@ -110,6 +113,33 @@ public class Exercises {
             if (i % 10 == 0) System.out.println();
             System.out.print(primes.get(i) + "\t");
         }
+    }
+    
+    
+    // #9. Write a guessing game where the user has to guess a secret number. After every guess the program
+    //     tells the user whether their number was too large or too small. At the end the number of tries needed 
+    //     should be printed. I counts only as one try if they input the same number multiple times consecutively.
+    public static void ex9() {
+        int min_ = 1, max_ = 100;
+        System.out.print("Pick a number between 1 and 100: ");
+        
+        Random rand = new Random();
+        int num = rand.nextInt(max_) + min_;
+        ArrayList<Integer> count = new ArrayList<Integer>();
+             
+        int guess;
+        do {
+            guess = input.nextInt();
+            if (!count.contains(guess)) count.add(guess);
+            if (guess == num) {
+                System.out.println("Congratulations! You guessed " + num + " correctly!");
+            } else if (guess > num) {
+                System.out.print("Lower! ");
+            } else if (guess < num) {
+                System.out.print("Higher! ");
+            }
+        } while (guess != num);
+        System.out.println("Correct answer guessed in " + count.size() + " tries!");
     }
     
     
