@@ -143,7 +143,28 @@ public class Exercises {
     }
     
     
-    /* ---------------------------------- */
+    // #10. Write a program that prints the next 20 leap years.
+    public static void ex10(int first_yr_) {
+        ArrayList<Integer> output = new ArrayList<Integer>();
+        
+        int years_ = first_yr_;
+        
+        while (output.size() < 20) {
+            boolean leap_year = false;
+            if (years_ % 4 == 0) leap_year = true;
+            if (years_ % 100 == 0) leap_year = false;
+            if (years_ % 400 == 0) leap_year = true;
+            if (leap_year) output.add(years_);
+            years_++;
+        }
+        for(int i = 0; i < 20; i++) {
+            if (i % 5 == 0) System.out.println();
+            System.out.print(output.get(i) + "\t"); 
+        }
+    }
+    
+    
+/* ------------------------------------------------------------------------------------ */
     public static void main(String[] args) {
     // ... insert call to exercise here ...
     }
