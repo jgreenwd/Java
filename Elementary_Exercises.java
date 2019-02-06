@@ -1,3 +1,7 @@
+import java.util.Random;
+import java.util.Arrays;
+import java.util.ArrayList;
+
 public class Exercises {
     
     // #1. Write a program that prints ‘Hello World’ to the screen.
@@ -165,7 +169,7 @@ public class Exercises {
     
     
 /* ------------------------------------------------------------------------------------ */
-    public static void main(String[] args) {
-    // ... insert call to exercise here ...
-    }
+ public static void main(String[] args) {
+        // ... insert function call to exercise here ...
+    }    
 }
