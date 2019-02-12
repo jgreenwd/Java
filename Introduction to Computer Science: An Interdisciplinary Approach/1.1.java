@@ -20,7 +20,14 @@ public class UseArgument {
     d. args   - ** error: cannot find symbol
    */
    
-   /* 1.1.4 Describe what happens if you try to execute UseArgument with each of the following command lines:
+   /* 1.1.4 Describe what happens if you put the double quotes in the print statement of HelloWorld.java
+    on different lines, as in this code fragment:
+     System.out.println("Hello,
+                         World");
+     - Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 2 at...
+    */
+  
+   /* 1.1.5 Describe what happens if you try to execute UseArgument with each of the following command lines:
     a. java UseArgument java        - prints "java" to screen
     b. java UseArgument @!&a%       - bash !: event not found
     c. java UseArgument 1234        - prints "1234" to screen
@@ -29,7 +36,7 @@ public class UseArgument {
    */
 }
 
-  // 1.1.5 Modify UseArgument.java to make a program UseThree.java that takes three names and prints out a proper 
+  // 1.1.6 Modify UseArgument.java to make a program UseThree.java that takes three names and prints out a proper 
   // sentence with the names in the reverse of the order given, so that, for example, java UseThree Alice Bob Carol 
   // gives Hi Carol, Bob, and Alice.
   
