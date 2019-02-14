@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="240.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="guidemo.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="guidemo.FXMLDocumentController">
    <children>
       <HBox layoutX="14.0" layoutY="14.0" prefHeight="240.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox prefHeight="215.0" prefWidth="103.0" spacing="10.0">
+            <VBox prefHeight="480.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="CheckBox Example" />
                   <CheckBox fx:id="pepperoniCheckBox" mnemonicParsing="false" text="Pepperoni" />
@@ -21,13 +23,23 @@
                   <Button mnemonicParsing="false" onAction="#pizzaOrderButtonPushed" text="Order Pizza" />
                   <Label fx:id="pizzaOrderLabel" text="Label" />
                </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </padding>
             </VBox>
-            <VBox prefHeight="215.0" prefWidth="103.0" spacing="10.0">
+            <VBox prefHeight="480.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="ChoiceBox Example" />
                   <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
                   <Button mnemonicParsing="false" onAction="#choiceBoxButtonPushed" text="Favorite Fruit" />
                   <Label fx:id="choiceBoxLabel" text="Label" />
+               </children>
+            </VBox>
+            <VBox prefHeight="480.0" prefWidth="200.0">
+               <children>
+                  <Label text="ComboBox Example" />
+                  <ComboBox fx:id="comboBox" onAction="#comboBoxWasUpdated" prefWidth="150.0" />
+                  <Label fx:id="comboBoxLabel" text="Label" />
                </children>
             </VBox>
          </children>
