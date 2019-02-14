@@ -17,6 +17,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML private CheckBox pineappleCheckBox;
     @FXML private CheckBox baconCheckBox;
     
+    // These items for ChoiceBox example
+    @FXML private ChoiceBox choiceBox;
+    @FXML private Label choiceBoxLabel;
+    
+    /* This will update ChoiceBox example */
+    public void choiceBoxButtonPushed() {
+        choiceBoxLabel.setText("My favorite fruit is: " + choiceBox.getValue().toString());
+    }
+    
     /* This will update CheckBox example */
     public void pizzaOrderButtonPushed() {
         String order = "Toppins are:";
@@ -37,7 +46,12 @@ public class FXMLDocumentController implements Initializable {
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        pizzaOrderLabel.setText("");        
+        pizzaOrderLabel.setText("");
+        
+        // These are for ChoiceBox example
+        choiceBoxLabel.setText("");
+        choiceBox.getItems().addAll("apples","oranges","pairs", "bananas", "strawberries");
+        choiceBox.setValue("apples");
     }    
     
 }
