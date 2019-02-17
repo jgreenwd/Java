@@ -16,8 +16,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 public class ExampleTableViewController implements Initializable {
@@ -31,26 +33,12 @@ public class ExampleTableViewController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    
-    
+
     /* ---------- TableView Example ---------- */
     @FXML private TableView<Person> tableView;
     @FXML private TableColumn<Person, String> firstNameColumn;
     @FXML private TableColumn<Person, String> lastNameColumn;
     @FXML private TableColumn<Person, LocalDate> birthdayColumn;
-    
-    
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TableView Example
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
-        lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
-        birthdayColumn.setCellValueFactory(new PropertyValueFactory<Person, LocalDate>("birthday"));
-        
-        tableView.setItems(getPeople());
-    }
-
     
     // TableView Example methods
     public ObservableList<Person> getPeople() {
@@ -61,4 +49,37 @@ public class ExampleTableViewController implements Initializable {
         
         return people;
     }
+    
+    // TableView Edit methods
+    public void changeFirstNameCellEvent(CellEditEvent edittedCell) {
+        Person personSelected = tableView.getSelectionModel().getSelectedItem();
+        personSelected.setFirstName(edittedCell.getNewValue().toString());
+    }
+    
+    public void changeLastNameCellEvent(CellEditEvent edittedCell) {
+        Person personSelected = tableView.getSelectionModel().getSelectedItem();
+        personSelected.setLastName(edittedCell.getNewValue().toString());
+    }
+    
+    
+    
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TableView Example
+        firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
+        lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
+        birthdayColumn.setCellValueFactory(new PropertyValueFactory<Person, LocalDate>("birthday"));
+        
+        // set dummy data
+        tableView.setItems(getPeople());
+        // update table to allow edits
+        tableView.setEditable(true);
+        firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+    }
+
+    
+
 }
