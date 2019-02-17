@@ -17,16 +17,16 @@ public class Person {
         return firstName.get();
     }
 
-    public void setFirstName(SimpleStringProperty firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String firstName) {
+        this.firstName = new SimpleStringProperty (firstName);
     }
 
     public String getLastName() {
         return lastName.get();
     }
 
-    public void setLastName(SimpleStringProperty lastName) {
-        this.lastName = lastName;
+    public void setLastName(String lastName) {
+        this.lastName = new SimpleStringProperty (lastName);
     }
 
     public LocalDate getBirthday() {
@@ -36,7 +36,4 @@ public class Person {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-    
-    
-    
 }
