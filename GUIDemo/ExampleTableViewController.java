@@ -15,9 +15,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
@@ -61,6 +63,18 @@ public class ExampleTableViewController implements Initializable {
         personSelected.setLastName(edittedCell.getNewValue().toString());
     }
     
+    /* ---------- Add to TableView Example ---------- */
+    @FXML private TextField firstNameTextField;
+    @FXML private TextField lastNameTextField;
+    @FXML private DatePicker birthdayDatePicker;
+    
+    public void newPersonButtonPushed() {
+        Person newPerson = new Person(firstNameTextField.getText(),
+                                        lastNameTextField.getText(),
+                                        birthdayDatePicker.getValue());
+        
+        tableView.getItems().add(newPerson);
+    }
     
     
     
