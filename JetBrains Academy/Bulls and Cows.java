@@ -130,7 +130,7 @@ public class Main {
 
             System.out.println("Okay, let's start a game!");
 
-            // 2. Gameplay
+            // 3. Gameplay
             int turn = 0;
             int[] result;
             String response;
